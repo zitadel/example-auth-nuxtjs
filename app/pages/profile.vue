@@ -16,6 +16,7 @@
             <div
               class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center"
             >
+              <!--suppress HtmlDeprecatedAttribute -->
               <svg
                 class="w-6 h-6 text-white"
                 fill="currentColor"

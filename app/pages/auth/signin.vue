@@ -7,6 +7,7 @@
         <div
           class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 mb-6"
         >
+          <!--suppress HtmlDeprecatedAttribute -->
           <svg
             class="h-8 w-8 text-blue-600"
             fill="none"
@@ -45,6 +46,7 @@
               type="submit"
               class="w-full flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200"
             >
+              <!--suppress HtmlDeprecatedAttribute -->
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   fill-rule="evenodd"
@@ -66,6 +68,7 @@
             to="/"
             class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700"
           >
+            <!--suppress HtmlDeprecatedAttribute -->
             <svg
               class="w-4 h-4 mr-2"
               fill="none"

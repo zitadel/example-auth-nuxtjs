@@ -5,6 +5,7 @@ body {
   padding: 0;
 }
 
+/*noinspection ALL*/
 #__nuxt {
   height: 100%;
   display: flex;

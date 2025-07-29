@@ -9,6 +9,7 @@
         <div
           class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100 mb-6"
         >
+          <!--suppress HtmlDeprecatedAttribute -->
           <svg
             class="h-8 w-8 text-red-600"
             fill="none"
@@ -37,8 +38,8 @@
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <button
-            @click="handleReload"
             class="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            @click="handleReload"
           >
             Reload page
           </button>

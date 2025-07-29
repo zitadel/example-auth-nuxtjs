@@ -6,6 +6,7 @@
       <div
         class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 mb-6"
       >
+        <!--suppress HtmlDeprecatedAttribute -->
         <svg
           class="h-8 w-8 text-gray-600"
           fill="none"
@@ -44,8 +45,10 @@
 </template>
 
 <script setup lang="ts">
-// Handle 404 errors
 defineProps({
-  error: Object,
+  error: {
+    type: Object,
+    default: null,
+  },
 });
 </script>
