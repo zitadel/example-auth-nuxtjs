@@ -91,53 +91,40 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
-
 import { useAuth } from '#imports';
 import { getMessage } from '~/pages/auth/message';
 
-// REMOVE 'signIn' from the destructuring list
-const { getCsrfToken, getProviders } = useAuth(); // Corrected line
-
-interface ProviderEntry {
+interface AuthProvider {
   id: string;
   name: string;
-  type: 'oauth' | 'email' | 'credentials'; // Add other provider types if needed (e.g., 'email')
+  type: 'oauth' | 'email' | 'credentials';
   signinUrl: string;
   callbackUrl: string;
-  // Add any other properties you might actually use from the provider object
-  // For example: authorizationUrl?: string; // If you ever use it
 }
 
-// This type defines the shape of the 'providers' object,
-// where keys are provider IDs (strings) and values are ProviderEntry or undefined.
-type ProvidersRecord = Record<string, ProviderEntry | undefined>;
+type ProvidersRecord = Record<string, AuthProvider | undefined>;
 
+const { getCsrfToken, getProviders } = useAuth();
 const route = useRoute();
-const error = computed(() => {
-  const errorQuery = route.query.error;
-  if (Array.isArray(errorQuery)) {
-    return errorQuery[0]?.toString();
-  }
-  return errorQuery?.toString();
-});
-const callbackUrl = route.query.callbackUrl || '/profile';
 
 const providers = ref<ProvidersRecord | null>(null);
 const csrfToken = ref('');
 
-onMounted(async () => {
-  // Call getProviders first, await its result
-  providers.value = await getProviders();
+const provider = computed(() => providers.value?.zitadel);
+const callbackUrl = computed(() => route.query.callbackUrl || '/profile');
 
-  // Then call getCsrfToken, await its result
-  const tokenData = await getCsrfToken();
+onMounted(async () => {
+  const [providersData, tokenData] = await Promise.all([
+    getProviders(),
+    getCsrfToken(),
+  ]);
+
+  providers.value = providersData;
   csrfToken.value = tokenData || '';
 });
-const provider = computed(() => providers.value?.zitadel);
 
-const { message } = getMessage(route.query.error as string, 'signin-error');
+const { message } = getMessage(route.query.error, 'signin-error');
+const error = computed(() => !!route.query.error);
 
 definePageMeta({
   auth: {

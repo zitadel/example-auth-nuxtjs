@@ -1,3 +1,5 @@
+import type { LocationQueryValue } from 'vue-router';
+
 /**
  * Defines categories of authentication-related errors.
  * - 'signin-error': Errors related to the direct sign-in flow (e.g., from an
@@ -11,16 +13,25 @@ export type ErrorCategory = 'signin-error' | 'auth-error';
  * Retrieves a user-friendly error message and heading based on an error code
  * and category.
  *
- * @param errorCode The specific error code received (e.g., 'OAuthCallback',
- * 'AccessDenied'). Can be null if no specific code is available.
+ * @param errorInput The error input which can be:
+ * - A specific error code string (e.g., 'OAuthCallback', 'AccessDenied')
+ * - A route query value from route.query.error (string, array, null, or undefined)
  * @param category The category of the error ('signin-error' for flow-specific
  * messages, 'auth-error' for general error page messages).
  * @returns An object containing a 'heading' and a 'message' for display.
  */
 export function getMessage(
-  errorCode: string | null,
+  errorInput:
+    | string
+    | null
+    | LocationQueryValue
+    | LocationQueryValue[]
+    | undefined,
   category: ErrorCategory,
 ): { heading: string; message: string } {
+  const errorCode = Array.isArray(errorInput)
+    ? (errorInput[0]?.toString() ?? null)
+    : (errorInput?.toString() ?? null);
   const normalizedErrorCode = errorCode ? errorCode.toLowerCase() : 'default';
 
   if (category === 'signin-error') {
