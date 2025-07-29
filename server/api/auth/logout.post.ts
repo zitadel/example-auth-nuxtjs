@@ -18,6 +18,7 @@ import { buildLogoutUrl } from '~~/server/auth';
  * cookie that will be validated in the logout callback.
  */
 export default defineEventHandler(async (event) => {
+  const requestURL = getRequestURL(event);
   const session = await getServerSession(event);
 
   if (!session?.idToken) {
@@ -30,7 +31,7 @@ export default defineEventHandler(async (event) => {
 
     setCookie(event, 'logout_state', state, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: requestURL.protocol === 'https:',
       sameSite: 'lax',
       path: '/api/auth/logout/callback',
     });
