@@ -7,7 +7,7 @@ import type { LocationQueryValue } from 'vue-router';
  * - 'auth-error': General authentication errors typically displayed on an
  * error page (e.g., configuration issues, access denied).
  */
-export type ErrorCategory = 'signin-error' | 'auth-error';
+type ErrorCategory = 'signin-error' | 'auth-error';
 
 /**
  * Retrieves a user-friendly error message and heading based on an error code
