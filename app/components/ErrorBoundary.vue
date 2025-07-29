@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onErrorCaptured, type ComponentPublicInstance } from 'vue';
+import { type ComponentPublicInstance, onErrorCaptured, ref } from 'vue';
 
 interface Props {
   fallback?: boolean;

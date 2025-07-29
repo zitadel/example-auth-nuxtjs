@@ -91,12 +91,12 @@
 </template>
 
 <script setup lang="ts">
-import { getProviders, getCsrfToken } from '#auth/client';
 import type {
+  BuiltInProviderType,
   ClientSafeProvider,
   LiteralUnion,
-  BuiltInProviderType,
 } from '#auth/client';
+import { getCsrfToken, getProviders } from '#auth/client';
 
 const route = useRoute();
 const error = route.query.error || null;
