@@ -15,7 +15,7 @@
   "dependencies": {
     "@mridang/nuxt-auth": "^1.0.0",
     "@nuxt/image": "^1.10.0",
-    "next-auth": "~4.21.1",
+    "next-auth": "~4.24.5",
     "nuxt": "^4.0.1",
     "openid-client": "^6.6.2",
     "vue": "^3.5.17",
