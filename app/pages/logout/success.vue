@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import {useHead} from '#app';
+import { useHead } from '#app';
 
 // Auto-redirect after 10 seconds
 useHead({

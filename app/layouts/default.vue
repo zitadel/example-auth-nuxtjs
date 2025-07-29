@@ -1,11 +1,11 @@
 <template>
-	<div class="bg-gray-50 min-h-screen flex flex-col">
-		<ErrorBoundary :show-details="process.env.NODE_ENV === 'development'">
-			<slot />
-		</ErrorBoundary>
-	</div>
+  <ErrorBoundary :show-details="isDev" class="flex-1 flex flex-col">
+    <slot />
+  </ErrorBoundary>
 </template>
 
 <script setup lang="ts">
-import ErrorBoundary from '~/components/ErrorBoundary.vue'
+import ErrorBoundary from '~/components/ErrorBoundary.vue';
+
+const isDev = import.meta.dev;
 </script>
