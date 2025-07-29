@@ -51,35 +51,12 @@
 </template>
 
 <script setup lang="ts">
+import { getMessage } from '~/pages/auth/message';
+
 const route = useRoute();
-const error = route.query.error || 'default';
 
-const getErrorInfo = (errorType: string) => {
-  switch (errorType.toLowerCase()) {
-    case 'configuration':
-      return {
-        heading: 'Server error',
-        message:
-          'There is a problem with the server configuration. Check the server logs for more information.',
-      };
-    case 'accessdenied':
-      return {
-        heading: 'Access denied',
-        message: 'You do not have permission to sign in.',
-      };
-    case 'verification':
-      return {
-        heading: 'Unable to sign in',
-        message:
-          'The sign in link is no longer valid. It may have been used already or it may have expired.',
-      };
-    default:
-      return {
-        heading: 'Authentication error',
-        message: 'An unexpected error occurred during authentication.',
-      };
-  }
-};
-
-const { heading, message } = getErrorInfo(error as string);
+const { heading, message } = getMessage(
+  route.query.error as string,
+  'auth-error',
+);
 </script>

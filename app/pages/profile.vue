@@ -62,7 +62,7 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
-import { useAuth } from '#auth/client';
+import { useAuth } from '#imports';
 
 const { data, status, signIn } = useAuth();
 

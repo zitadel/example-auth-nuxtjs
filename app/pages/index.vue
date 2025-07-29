@@ -119,7 +119,7 @@
                 </div>
                 <button
                   class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center space-x-2 mb-6 cursor-pointer"
-                  @click="() => {}"
+                  @click="() => signIn('zitadel', { callbackUrl: '/profile' })"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
                   <svg
@@ -207,5 +207,7 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
-//import { signIn } from '#auth/client';
+import { useAuth } from '#imports';
+
+const { signIn } = useAuth();
 </script>

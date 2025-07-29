@@ -34,7 +34,7 @@
             error ? 'text-red-600' : 'text-gray-500'
           }`"
         >
-          {{ error ? getErrorMessage(error) : 'Continue to your account' }}
+          {{ error ? message : 'Continue to your account' }}
         </p>
 
         <div v-if="provider" class="mt-10">
@@ -91,53 +91,58 @@
 </template>
 
 <script setup lang="ts">
-import type {
-  BuiltInProviderType,
-  ClientSafeProvider,
-  LiteralUnion,
-} from '#auth/client';
-import { getCsrfToken, getProviders } from '#auth/client';
+import { computed, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
+import { useAuth } from '#imports';
+import { getMessage } from '~/pages/auth/message';
+
+// REMOVE 'signIn' from the destructuring list
+const { getCsrfToken, getProviders } = useAuth(); // Corrected line
+
+interface ProviderEntry {
+  id: string;
+  name: string;
+  type: 'oauth' | 'email' | 'credentials'; // Add other provider types if needed (e.g., 'email')
+  signinUrl: string;
+  callbackUrl: string;
+  // Add any other properties you might actually use from the provider object
+  // For example: authorizationUrl?: string; // If you ever use it
+}
+
+// This type defines the shape of the 'providers' object,
+// where keys are provider IDs (strings) and values are ProviderEntry or undefined.
+type ProvidersRecord = Record<string, ProviderEntry | undefined>;
 
 const route = useRoute();
-const error = route.query.error || null;
+const error = computed(() => {
+  const errorQuery = route.query.error;
+  if (Array.isArray(errorQuery)) {
+    return errorQuery[0]?.toString();
+  }
+  return errorQuery?.toString();
+});
 const callbackUrl = route.query.callbackUrl || '/profile';
 
-const providers = ref<Record<
-  LiteralUnion<BuiltInProviderType>,
-  ClientSafeProvider
-> | null>(null);
+const providers = ref<ProvidersRecord | null>(null);
 const csrfToken = ref('');
 
-const getErrorMessage = (errorType: string | null) => {
-  switch (errorType) {
-    case 'Signin':
-    case 'OAuthSignin':
-    case 'OAuthCallback':
-    case 'OAuthCreateAccount':
-    case 'EmailCreateAccount':
-    case 'Callback':
-      return 'Try signing in with a different account.';
-    case 'OAuthAccountNotLinked':
-      return 'To confirm your identity, sign in with the same account you used originally.';
-    case 'EmailSignin':
-      return 'The email could not be sent.';
-    case 'CredentialsSignin':
-      return 'Sign in failed. Check the details you provided are correct.';
-    case 'SessionRequired':
-      return 'Please sign in to access this page.';
-    default:
-      return 'Unable to sign in.';
-  }
-};
-
 onMounted(async () => {
-  const [providersData, tokenData] = await Promise.all([
-    getProviders(),
-    getCsrfToken(),
-  ]);
-  providers.value = providersData;
+  // Call getProviders first, await its result
+  providers.value = await getProviders();
+
+  // Then call getCsrfToken, await its result
+  const tokenData = await getCsrfToken();
   csrfToken.value = tokenData || '';
 });
-
 const provider = computed(() => providers.value?.zitadel);
+
+const { message } = getMessage(route.query.error as string, 'signin-error');
+
+definePageMeta({
+  auth: {
+    unauthenticatedOnly: true,
+    navigateAuthenticatedTo: '/',
+  },
+});
 </script>
