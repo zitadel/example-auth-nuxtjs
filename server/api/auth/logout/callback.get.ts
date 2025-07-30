@@ -1,5 +1,5 @@
-import type { H3Event } from 'h3';
-import { parseCookies, deleteCookie } from 'h3';
+import { type H3Event, setHeader } from 'h3';
+import { parseCookies } from 'h3';
 
 /**
  * Handles the callback from an external Identity Provider (IdP) after a user
@@ -20,14 +20,9 @@ export default defineEventHandler(async (event: H3Event) => {
   const logoutStateCookie = cookieStore.logout_state;
 
   if (state && logoutStateCookie && state === logoutStateCookie) {
-    deleteCookie(event, 'logout_state', {
-      path: '/',
-    });
-    deleteCookie(event, 'next-auth.session-token', {
-      path: '/',
-    });
+    setHeader(event, 'Clear-Site-Data', '"cookies"');
 
-	const successUrl = new URL('/logout/success', getRequestURL(event));
+    const successUrl = new URL('/logout/success', getRequestURL(event));
     return sendRedirect(event, successUrl.toString());
   } else {
     const errorUrl = new URL('/logout/error', getRequestURL(event));
