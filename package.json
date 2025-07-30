@@ -17,7 +17,7 @@
     "@nuxt/image": "^1.10.0",
     "h3": "^1.15.3",
     "next-auth": "^4.0.0",
-    "nuxt": "^4.0.1",
+    "nuxt": "^4.0.2",
     "openid-client": "^6.6.2",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.7.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
