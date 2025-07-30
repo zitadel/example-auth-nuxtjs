@@ -20,8 +20,6 @@ export default defineEventHandler(async (event: H3Event) => {
   const logoutStateCookie = cookieStore.logout_state;
 
   if (state && logoutStateCookie && state === logoutStateCookie) {
-    const successUrl = new URL('/logout/success', getRequestURL(event));
-
     deleteCookie(event, 'logout_state', {
       path: '/',
     });
@@ -29,6 +27,7 @@ export default defineEventHandler(async (event: H3Event) => {
       path: '/',
     });
 
+	const successUrl = new URL('/logout/success', getRequestURL(event));
     return sendRedirect(event, successUrl.toString());
   } else {
     const errorUrl = new URL('/logout/error', getRequestURL(event));
