@@ -19,8 +19,6 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/globals.css'],
   auth: {
-    // REMOVE THIS LINE: originEnvKey: 'NEXTAUTH_URL',
-    // ADD THIS LINE TO EXPLICITLY SET THE BASE URL FOR AUTH.JS ENDPOINTS
     baseURL: 'http://localhost:3000/api/auth',
   },
   runtimeConfig: {
