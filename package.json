@@ -16,7 +16,7 @@
     "@mridang/nuxt-auth": "^1.0.1",
     "@nuxt/image": "^1.10.0",
     "h3": "^1.15.3",
-    "next-auth": "^4.24.12",
+    "next-auth": "^4.24.13",
     "nuxt": "^4.1.0",
     "openid-client": "^6.6.2",
     "vue": "^3.5.17",
