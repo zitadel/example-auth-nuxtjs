@@ -1,5 +1,5 @@
 <template>
-  <form action="/api/auth/logout" method="POST">
+  <form action="/auth/logout" method="POST">
     <button
       type="submit"
       class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-200 cursor-pointer"

@@ -13,10 +13,9 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@mridang/nuxt-auth": "^1.0.1",
+    "@sidebase/nuxt-auth": "https://pkg.pr.new/@sidebase/nuxt-auth@1049",
     "@nuxt/image": "^1.10.0",
     "h3": "^1.15.3",
-    "next-auth": "^4.0.0",
     "nuxt": "^4.1.0",
     "openid-client": "^6.6.2",
     "vue": "^3.5.17",
@@ -30,7 +29,7 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "typescript": "^5",
-	  "knip": "^5.64.1"
+    "knip": "^5.64.1"
   },
   "overrides": {
     "koa": "^3.0.0"
