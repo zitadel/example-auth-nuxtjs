@@ -22,12 +22,6 @@ module.exports = {
     '~~/server/*': ['./server/*'],
     '~/*': ['./app/*'],
   },
-  ignoreDependencies: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxtjs/tailwindcss',
-    '@mridang/nuxt-auth',
-    'tailwindcss',
-  ],
+  ignoreDependencies: ['tailwindcss', 'next-auth'],
   ignoreUnresolved: ['#imports', '#app'],
 };
