@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@sidebase/nuxt-auth": "https://pkg.pr.new/@sidebase/nuxt-auth@1049",
-    "@nuxt/image": "^1.10.0",
+    "@nuxt/image": "^2.0.0",
     "h3": "^1.15.3",
     "nuxt": "^4.1.0",
     "openid-client": "^6.6.2",
@@ -24,12 +24,12 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.7.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
     "typescript": "^5",
-    "knip": "^5.64.1"
+    "knip": "^5.70.1"
   },
   "overrides": {
     "koa": "^3.0.0"
