@@ -21,6 +21,12 @@ export default defineEventHandler(async (event: H3Event) => {
 
   if (state && logoutStateCookie && state === logoutStateCookie) {
     setHeader(event, 'Clear-Site-Data', '"cookies"');
+    for (const [name] of Object.entries(cookieStore)) {
+      if (name.includes('authjs.')) {
+        deleteCookie(event, name);
+      }
+    }
+    deleteCookie(event, 'logout_state');
 
     const successUrl = new URL('/logout/success', getRequestURL(event));
     return sendRedirect(event, successUrl.toString());
