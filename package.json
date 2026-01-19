@@ -15,23 +15,23 @@
   },
   "dependencies": {
     "@sidebase/nuxt-auth": "https://pkg.pr.new/@sidebase/nuxt-auth@1049",
-    "@nuxt/image": "^1.10.0",
+    "@nuxt/image": "^2.0.0",
     "h3": "^1.15.3",
-    "nuxt": "^4.1.0",
+    "nuxt": "^4.2.2",
     "openid-client": "^6.6.2",
     "vue": "^3.5.17",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.7.1",
+    "@nuxt/eslint": "^1.12.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@types/node": "^20",
+    "@types/node": "^25",
     "eslint": "^9",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.0",
     "typescript": "^5",
-    "knip": "^5.64.1",
-    "@playwright/test": "^1.56.1"
+    "knip": "^5.82.0",
+    "@playwright/test": "^1.57.0"
   },
   "overrides": {
     "koa": "^3.0.0"
