@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
-    '@sidebase/nuxt-auth',
+    '@zitadel/nuxt-auth',
   ],
   app: {
     head: {
@@ -28,8 +28,6 @@ export default defineNuxtConfig({
     zitadelClientSecret: process.env.ZITADEL_CLIENT_SECRET,
     zitadelPostLogoutUrl: process.env.ZITADEL_POST_LOGOUT_URL,
 
-    public: {
-      nextAuthUrl: process.env.NEXTAUTH_URL,
-    },
+    public: {},
   },
 });

@@ -1,4 +1,4 @@
-declare module 'next-auth' {
+declare module '@auth/core/types' {
   interface Session {
     idToken?: string;
     accessToken?: string;
@@ -6,7 +6,7 @@ declare module 'next-auth' {
   }
 }
 
-declare module 'next-auth/jwt' {
+declare module '@auth/core/jwt' {
   interface JWT {
     idToken?: string;
     accessToken?: string;

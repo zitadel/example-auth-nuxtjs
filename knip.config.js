@@ -22,6 +22,6 @@ module.exports = {
     '~~/server/*': ['./server/*'],
     '~/*': ['./app/*'],
   },
-  ignoreDependencies: ['tailwindcss', 'next-auth'],
+  ignoreDependencies: ['tailwindcss'],
   ignoreUnresolved: ['#imports', '#app'],
 };

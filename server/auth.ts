@@ -1,8 +1,8 @@
-import NextAuth from 'next-auth';
-import ZitadelProvider from 'next-auth/providers/zitadel';
+import ZitadelProvider from '@auth/core/providers/zitadel';
 import { randomUUID } from 'crypto';
 import * as oidc from 'openid-client';
-import type { JWT } from 'next-auth/jwt';
+import type { AuthConfig } from '@auth/core/types';
+import type { JWT } from '@auth/core/jwt';
 import { ZITADEL_SCOPES } from './scopes';
 
 const cfg = () => useRuntimeConfig();
@@ -67,7 +67,7 @@ export async function buildLogoutUrl(
  *
  * ## How Token Refresh Works
  *
- * 1. **Token Expiry Detection**: NextAuth automatically checks if the access
+ * 1. **Token Expiry Detection**: Auth.js automatically checks if the access
  *    token has expired
  * 2. **Refresh Request**: Uses the refresh token to request new tokens from
  *    ZITADEL
@@ -129,8 +129,7 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
 }
 
 /**
- * Complete NextAuth.js configuration for ZITADEL authentication with token
- * refresh.
+ * Auth.js configuration for ZITADEL authentication with token refresh.
  *
  * This configuration implements the industry-standard OAuth 2.0 Authorization
  * Code Flow with PKCE (Proof Key for Code Exchange) for maximum security. It
@@ -160,14 +159,14 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
  *
  * ## Callback Functions Explained
  *
- * NextAuth uses callback functions to customize the authentication flow:
+ * Auth.js uses callback functions to customize the authentication flow:
  * - **redirect**: Controls where users go after login/logout
  * - **jwt**: Manages token storage and refresh logic
  * - **session**: Shapes what data is available to your app
  */
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthConfig = {
   providers: [
-    ZitadelProvider.default({
+    ZitadelProvider({
       issuer: cfg().zitadelDomain,
       clientId: cfg().zitadelClientId,
       clientSecret: cfg().zitadelClientSecret,
@@ -182,7 +181,6 @@ export const authOptions: NextAuthOptions = {
           name: profile.name || profile.preferred_username,
           email: profile.email,
           image: profile.picture || null,
-          locale: profile.locale,
         };
       },
     }),
@@ -196,9 +194,9 @@ export const authOptions: NextAuthOptions = {
   secret: cfg().sessionSecret,
 
   /**
-   * Custom page configurations for NextAuth.js
+   * Custom page configurations for Auth.js
    *
-   * NextAuth.js provides several built-in pages for authentication flows, but
+   * Auth.js provides several built-in pages for authentication flows, but
    * you can customize them to match your application's design and branding.
    * This configuration overrides the default pages with custom implementations.
    *
@@ -217,7 +215,7 @@ export const authOptions: NextAuthOptions = {
      * Controls where users are redirected after successful authentication.
      *
      * This callback runs after a user successfully signs in and determines
-     * their destination. By default, NextAuth would redirect to the page they
+     * their destination. By default, Auth.js would redirect to the page they
      * came from, but this override ensures all users go to the profile page.
      *
      * @param baseUrl - Your application's base URL (e.g.,
@@ -238,7 +236,7 @@ export const authOptions: NextAuthOptions = {
      *
      * ## When This Runs
      * - Every time getServerSession() is called
-     * - Every time useSession() updates
+     * - Every time useAuth() updates
      * - Before each authenticated API request
      *
      * ## Token Storage Strategy
@@ -278,7 +276,7 @@ export const authOptions: NextAuthOptions = {
      * Shapes the session object that your application receives.
      *
      * This callback transforms the internal JWT token into the session object
-     * that your application code can access via useSession() or
+     * that your application code can access via useAuth() or
      * getServerSession().
      *
      * ## Security Note
@@ -291,7 +289,7 @@ export const authOptions: NextAuthOptions = {
      * - **accessToken**: For API calls (if needed on the client-side)
      * - **error**: To handle token refresh failures
      *
-     * @param session - The base session object from NextAuth
+     * @param session - The base session object from Auth.js
      * @param token - The JWT token containing all stored data
      * @returns The session object that your application will receive
      */
@@ -303,5 +301,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 };
-
-export default NextAuth.default(authOptions);

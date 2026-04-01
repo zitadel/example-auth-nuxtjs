@@ -2,11 +2,11 @@
 
 [Nuxt.js](https://nuxt.com/) is The Intuitive Vue Framework that enables you to create full-stack web applications with Vue.js. Built with developer experience in mind, Nuxt provides powerful features including file-based routing, server-side rendering, and auto-imports for building modern web applications.
 
-To secure such an application, you need a reliable way to handle user logins. For the Nuxt.js ecosystem, [@sidebase/nuxt-auth](https://auth.sidebase.io/) is the standard and recommended library for authentication. Think of it as a flexible security guard for your app. This guide demonstrates how to use @sidebase/nuxt-auth with a Nuxt.js application to implement a secure login with ZITADEL.
+To secure such an application, you need a reliable way to handle user logins. For the Nuxt.js ecosystem, [@zitadel/nuxt-auth](https://github.com/zitadel/nuxt-auth) is the standard and recommended library for authentication. Think of it as a flexible security guard for your app. This guide demonstrates how to use @zitadel/nuxt-auth with a Nuxt.js application to implement a secure login with ZITADEL.
 
 We'll be using the **OpenID Connect (OIDC)** protocol with the **Authorization Code Flow + PKCE**. This is the industry-best practice for security, ensuring that the login process is safe from start to finish. You can learn more in our [guide to OAuth 2.0 recommended flows](https://zitadel.com/docs/guides/integrate/login/oidc/oauth-recommended-flows).
 
-This example uses **@sidebase/nuxt-auth**, the standard for Nuxt.js authentication. While ZITADEL doesn't offer a specific SDK, @sidebase/nuxt-auth is highly modular. It works with a "provider" that handles the communication with ZITADEL. Under the hood, this example uses the powerful OIDC standard to manage the secure PKCE flow.
+This example uses **@zitadel/nuxt-auth**, the standard for Nuxt.js authentication. While ZITADEL doesn't offer a specific SDK, @zitadel/nuxt-auth is highly modular. It works with a "provider" that handles the communication with ZITADEL. Under the hood, this example uses the powerful OIDC standard to manage the secure PKCE flow.
 
 Check out our Example Application to see it in action.
 
@@ -14,7 +14,7 @@ Check out our Example Application to see it in action.
 
 The example repository includes a complete Nuxt.js application, ready to run, that demonstrates how to integrate ZITADEL for user authentication.
 
-This example application showcases a typical web app authentication pattern: users start on a public landing page, click a login button to authenticate with ZITADEL, and are then redirected to a protected profile page displaying their user information. The app also includes secure logout functionality that clears the session and redirects users back to ZITADEL's logout endpoint. All protected routes are automatically secured using @sidebase/nuxt-auth middleware and session management, ensuring only authenticated users can access sensitive areas of your application.
+This example application showcases a typical web app authentication pattern: users start on a public landing page, click a login button to authenticate with ZITADEL, and are then redirected to a protected profile page displaying their user information. The app also includes secure logout functionality that clears the session and redirects users back to ZITADEL's logout endpoint. All protected routes are automatically secured using @zitadel/nuxt-auth middleware and session management, ensuring only authenticated users can access sensitive areas of your application.
 
 ### Prerequisites
 
@@ -112,7 +112,7 @@ The application implements the secure Authorization Code Flow with PKCE (Proof K
 
 ### Session Management
 
-Built-in session management with @sidebase/nuxt-auth handles user authentication state across your application, with automatic token refresh and secure session storage.
+Built-in session management with @zitadel/nuxt-auth handles user authentication state across your application, with automatic token refresh and secure session storage.
 
 ### Route Protection
 
@@ -156,5 +156,5 @@ At minimum, configure:
 ## Resources
 
 - **Nuxt.js Documentation:** <https://nuxt.com/docs>
-- **@sidebase/nuxt-auth Documentation:** <https://auth.sidebase.io/>
+- **@zitadel/nuxt-auth Documentation:** <https://github.com/zitadel/nuxt-auth>
 - **ZITADEL Documentation:** <https://zitadel.com/docs>
