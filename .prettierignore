@@ -5,7 +5,8 @@ node_modules
 /dist
 /build
 /out
-.next
+.nuxt
+.output
 
 # Version control directories
 .git
