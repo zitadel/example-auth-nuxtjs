@@ -223,7 +223,10 @@ export const authOptions: AuthConfig = {
      * @returns The URL to redirect the user to after successful login
      */
     async redirect({ baseUrl }) {
-      return `${baseUrl}/profile`;
+      const postLoginUrl = cfg().zitadelPostLoginUrl || '/profile';
+      return postLoginUrl.startsWith('http')
+        ? postLoginUrl
+        : `${baseUrl}${postLoginUrl}`;
     },
 
     /**

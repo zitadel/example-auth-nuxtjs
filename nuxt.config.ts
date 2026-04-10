@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     zitadelDomain: process.env.ZITADEL_DOMAIN,
     zitadelClientId: process.env.ZITADEL_CLIENT_ID,
     zitadelClientSecret: process.env.ZITADEL_CLIENT_SECRET,
+    zitadelPostLoginUrl: process.env.ZITADEL_POST_LOGIN_URL,
     zitadelPostLogoutUrl: process.env.ZITADEL_POST_LOGOUT_URL,
 
     public: {},

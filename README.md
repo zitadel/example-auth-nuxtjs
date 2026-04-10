@@ -78,7 +78,11 @@ ZITADEL_CALLBACK_URL="http://localhost:3000/auth/callback/zitadel"
 
 # URL where users are redirected after logout. This should match a Post Logout
 # Redirect URI configured in your ZITADEL application settings.
-ZITADEL_POST_LOGOUT_URL="http://localhost:3000/"
+ZITADEL_POST_LOGOUT_URL="http://localhost:3000/auth/logout/callback"
+
+# Optional. URL where users are redirected after successful login.
+# Defaults to "/profile" if not specified.
+ZITADEL_POST_LOGIN_URL="/profile"
 
 # Base URL for your application. In development, this is typically
 # http://localhost:3000. In production, use your actual domain.
