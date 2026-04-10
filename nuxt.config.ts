@@ -1,6 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
+  devServer: {
+    port: Number(process.env.PORT) || 3000,
+  },
   devtools: {
     enabled: true,
   },
