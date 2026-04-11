@@ -1,4 +1,5 @@
 module.exports = {
+  ignore: ['commitlint.config.js'],
   nuxt: {
     entry: [
       'nuxt.config.ts',
@@ -22,6 +23,6 @@ module.exports = {
     '~~/server/*': ['./server/*'],
     '~/*': ['./app/*'],
   },
-  ignoreDependencies: ['tailwindcss'],
+  ignoreDependencies: ['@commitlint/config-conventional', 'tailwindcss'],
   ignoreUnresolved: ['#imports', '#app'],
 };
