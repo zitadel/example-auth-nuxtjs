@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
+      title: 'Zitadel PKCE Demo',
       bodyAttrs: {
         class: 'bg-gray-50 min-h-screen flex flex-col',
       },
