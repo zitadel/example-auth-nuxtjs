@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Zitadel PKCE Demo',
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
       bodyAttrs: {
         class: 'bg-gray-50 min-h-screen flex flex-col',
       },
