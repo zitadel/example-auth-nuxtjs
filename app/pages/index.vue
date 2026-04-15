@@ -9,7 +9,7 @@
               PKCE Authentication Demo
             </h1>
             <p class="text-xl text-gray-600 mb-8">
-              This application demonstrates an PKCE authentication flow with
+              This application demonstrates a PKCE authentication flow with
               Zitadel. Perfect for learning OAuth 2.0 security patterns and
               integrating with your own application.
             </p>

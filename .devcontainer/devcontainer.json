@@ -1,5 +1,5 @@
 {
-  "name": "ZITADEL Example Nuxt Auth",
+  "name": "Zitadel Example Nuxt Auth",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
   "forwardPorts": [3000],
   "portsAttributes": {
