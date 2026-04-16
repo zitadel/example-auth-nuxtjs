@@ -60,7 +60,7 @@
         </div>
 
         <div v-else class="mt-10">
-          <p class="text-gray-600">Loading...</p>
+          <p class="text-gray-600">Loading…</p>
         </div>
 
         <div class="mt-8">
