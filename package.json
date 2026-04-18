@@ -17,27 +17,27 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@auth/core": "^0.40.0",
-    "@nuxt/image": "^1.10.0",
+    "@auth/core": "^0.41.2",
+    "@nuxt/image": "^2.0.0",
     "@zitadel/nuxt-auth": "^0.0.1",
-    "h3": "^1.15.3",
-    "nuxt": "^4.1.0",
-    "openid-client": "^6.6.2",
+    "h3": "^1.15.11",
+    "nuxt": "^4.4.2",
+    "openid-client": "^6.8.3",
     "vue": "^3.5.17",
-    "vue-router": "^4.5.1"
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.5.0",
-    "@nuxt/eslint": "^1.7.1",
-    "@playwright/test": "^1.56.1",
+    "@nuxt/eslint": "^1.15.2",
+    "@playwright/test": "^1.59.1",
     "@tailwindcss/vite": "^4.2.2",
-    "@types/node": "^22",
-    "eslint": "^9.39.1",
+    "@types/node": "^25",
+    "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
-    "knip": "^5.64.1",
-    "prettier": "^3.6.2",
+    "knip": "^6.4.1",
+    "prettier": "^3.8.3",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=22.0.0"
