@@ -34,8 +34,159 @@
                 Authentication Successful!
               </h2>
               <p class="text-green-700 mt-1">
-                You have successfully logged into the application.
+                You have successfully completed the PKCE authentication flow.
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg border border-gray-200 p-8 mb-8">
+          <h1 class="text-3xl font-bold text-gray-900 mb-6">
+            🔐 OAuth 2.0 PKCE Flow Completed
+          </h1>
+          <p class="text-lg text-gray-700 mb-8">
+            Congratulations! You have successfully completed the OAuth 2.0 PKCE
+            (Proof Key for Code Exchange) authentication flow. This demonstrates
+            how modern applications securely authenticate users with Zitadel.
+          </p>
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900 mb-4">
+                What is PKCE?
+              </h2>
+              <p class="text-gray-700 mb-4">
+                PKCE is a security extension to OAuth 2.0 that protects against
+                authorization code interception attacks. It's especially
+                important for public clients like single-page applications and
+                mobile apps.
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                Key Benefits:
+              </h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 text-green-500 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  No client secret required
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 text-green-500 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Prevents code interception
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-4 h-4 text-green-500 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Dynamic security per flow
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900 mb-4">
+                Flow Steps Completed
+              </h2>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">
+                      Code Verifier Generated
+                    </div>
+                    <div class="text-sm text-gray-600">
+                      Random cryptographic string created
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">
+                      Code Challenge Created
+                    </div>
+                    <div class="text-sm text-gray-600">
+                      SHA256 hash of the verifier
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">
+                      Authorization Request
+                    </div>
+                    <div class="text-sm text-gray-600">
+                      Redirected to Zitadel with challenge
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">
+                      User Authentication
+                    </div>
+                    <div class="text-sm text-gray-600">
+                      Successfully authenticated with Zitadel
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div
+                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-900">Token Exchange</div>
+                    <div class="text-sm text-gray-600">
+                      Authorization code + verifier exchanged for tokens
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +196,8 @@
             Session Information
           </h2>
           <p class="text-gray-600 mb-6">
-            Below is the authentication data stored in your session:
+            Below is the authentication data stored in your session after a
+            successful PKCE flow:
           </p>
           <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
             <pre class="text-sm text-green-400 font-mono leading-relaxed"
