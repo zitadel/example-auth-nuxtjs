@@ -9,9 +9,9 @@ import { parseCookies } from 'h3';
  * If validation is successful, it clears the user's session cookies and
  * redirects to a success page. Otherwise, it redirects to an error page.
  *
- * @param request - The incoming Next.js request object, which contains the
+ * @param event - The incoming H3 event object, which contains the
  * URL and its search parameters, including the `state` from the IdP.
- * @returns A NextResponse object that either redirects the user to a success
+ * @returns A redirect response that either redirects the user to a success
  * or error page. Upon success, it includes headers to delete session cookies.
  */
 export default defineEventHandler(async (event: H3Event) => {
