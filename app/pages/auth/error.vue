@@ -53,6 +53,8 @@
 <script setup lang="ts">
 import { getMessage } from '~/pages/auth/message';
 
+definePageMeta({ auth: false });
+
 const route = useRoute();
 
 const { heading, message } = getMessage(

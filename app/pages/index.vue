@@ -207,7 +207,8 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
-import { useAuth } from '#imports';
+
+definePageMeta({ auth: false });
 
 const { signIn } = useAuth();
 </script>

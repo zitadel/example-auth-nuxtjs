@@ -45,6 +45,8 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ auth: false });
+
 const route = useRoute();
 const reason = route.query.reason || 'An unknown error occurred.';
 </script>

@@ -47,6 +47,8 @@
 <script setup lang="ts">
 import { useHead } from '#app';
 
+definePageMeta({ auth: false });
+
 // Auto-redirect after 10 seconds
 useHead({
   meta: [
