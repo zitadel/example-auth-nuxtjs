@@ -1,3 +1,5 @@
+import tailwindcss from '@tailwindcss/vite';
+
 // noinspection JSUnusedGlobalSymbols
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -7,12 +9,10 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: [
-    '@nuxt/eslint',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image',
-    '@zitadel/nuxt-auth',
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@zitadel/nuxt-auth'],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   app: {
     head: {
       title: 'Zitadel PKCE Demo',
@@ -24,7 +24,17 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/globals.css'],
   auth: {
-    baseURL: 'http://localhost:3000/api/auth',
+    baseURL: '/api/auth',
+  },
+  hooks: {
+    'nitro:config'(nitroConfig) {
+      nitroConfig.devStorage ??= {};
+      nitroConfig.devStorage['root'] = {
+        driver: 'fs-lite',
+        readOnly: true,
+        base: nitroConfig.rootDir,
+      };
+    },
   },
   runtimeConfig: {
     sessionSecret: process.env.SESSION_SECRET,

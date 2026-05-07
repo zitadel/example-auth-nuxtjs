@@ -6,7 +6,6 @@ module.exports = {
       'app/app.vue',
       'app/app.config.ts',
       'app/error.vue',
-      'tailwind.config.js',
       'app/**/*.vue',
       'app/composables/**/*.{js,ts}',
       'app/plugins/**/*.{js,ts}',
@@ -15,6 +14,7 @@ module.exports = {
       'server/**/*.{js,ts}',
       'content/**/*.{md,yml,yaml,json}',
       'modules/**/*.{js,ts}',
+      'app/assets/css/**/*.css',
     ],
   },
   paths: {
@@ -23,6 +23,6 @@ module.exports = {
     '~~/server/*': ['./server/*'],
     '~/*': ['./app/*'],
   },
-  ignoreDependencies: ['@commitlint/config-conventional', 'tailwindcss'],
+  ignoreDependencies: ['@commitlint/config-conventional'],
   ignoreUnresolved: ['#imports', '#app'],
 };
