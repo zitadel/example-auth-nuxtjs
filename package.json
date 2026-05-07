@@ -19,7 +19,7 @@
   "dependencies": {
     "@auth/core": "^0.40.0",
     "@nuxt/image": "^1.10.0",
-    "@zitadel/nuxt-auth": "^0.0.1",
+    "@zitadel/nuxt-auth": "^1.0.0",
     "h3": "^1.15.3",
     "nuxt": "^4.1.0",
     "openid-client": "^6.6.2",
