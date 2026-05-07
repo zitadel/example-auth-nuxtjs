@@ -26,7 +26,7 @@ export default defineEventHandler(async (event: H3Event) => {
         deleteCookie(event, name);
       }
     }
-    deleteCookie(event, 'logout_state');
+    deleteCookie(event, 'logout_state', { path: '/auth/logout/callback' });
 
     const successUrl = new URL('/logout/success', getRequestURL(event));
     return sendRedirect(event, successUrl.toString());
