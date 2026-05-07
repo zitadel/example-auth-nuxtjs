@@ -27,9 +27,13 @@ export default defineNuxtConfig({
     baseURL: '/api/auth',
   },
   hooks: {
-    'nitro:config'(nitroConfig) {
-      nitroConfig.devStorage ??= {};
-      nitroConfig.devStorage['root'] = {
+    // @ts-expect-error nitro:config is a valid Nuxt hook but missing from the type definitions
+    'nitro:config'(nitroConfig: Record<string, unknown>) {
+      const devStorage = ((nitroConfig.devStorage as Record<
+        string,
+        unknown
+      >) ??= {});
+      devStorage['root'] = {
         driver: 'fs-lite',
         readOnly: true,
         base: nitroConfig.rootDir,
