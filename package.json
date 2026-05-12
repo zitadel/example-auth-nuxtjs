@@ -39,7 +39,7 @@
     "knip": "^5.64.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.3"
+    "typescript": "~5.9.2"
   },
   "engines": {
     "node": ">=22.0.0"
