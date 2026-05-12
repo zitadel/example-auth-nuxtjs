@@ -6,15 +6,16 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "start": "nuxt dev",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "postinstall": "nuxt prepare",
     "prepack": "tsc --noEmit",
+    "preview": "nuxt preview",
+    "start": "nuxt dev",
     "test": "playwright test"
   },
   "dependencies": {
