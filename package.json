@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "depcheck": "npx knip",
     "dev": "nuxt dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
