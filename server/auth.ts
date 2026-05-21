@@ -206,7 +206,7 @@ export const authOptions: AuthConfig = {
    * (sign-in and error) since we use external OAuth authentication.
    */
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/auth/login',
     error: '/auth/error',
   },
 
