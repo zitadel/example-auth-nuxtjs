@@ -2,13 +2,7 @@
   <div class="bg-gray-50 min-h-screen flex flex-col">
     <Header :is-authenticated="true" />
     <main class="flex-1 px-6 py-12">
-      <div
-        v-if="status === 'loading'"
-        class="flex items-center justify-center min-h-screen"
-      >
-        <p>Loading your session…</p>
-      </div>
-      <div v-else class="max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <div
           class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-6 mb-8"
         >
@@ -216,11 +210,7 @@ import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
 import { useAuth } from '#imports';
 
-const { data, status, signIn } = useAuth();
+definePageMeta({ middleware: 'auth' });
 
-watchEffect(() => {
-  if (status.value === 'unauthenticated') {
-    signIn('zitadel', { callbackUrl: '/profile' });
-  }
-});
+const { data } = useAuth();
 </script>
