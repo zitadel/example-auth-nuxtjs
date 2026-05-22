@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
       httpOnly: true,
       secure: requestURL.protocol === 'https:',
       sameSite: 'lax',
-      path: '/auth/logout/callback',
+      path: '/api/auth/logout/callback',
     });
 
     return sendRedirect(event, url);
