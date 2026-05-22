@@ -1,4 +1,3 @@
-import { NuxtAuthHandler } from '#auth';
-import { authOptions } from '../../auth';
+import { handlers } from '~~/server/auth';
 
-export default NuxtAuthHandler(authOptions);
+export default handlers;

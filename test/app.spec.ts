@@ -5,12 +5,12 @@ test('app returns 200', async ({ page }) => {
   expect(response?.status()).toBe(200);
 });
 
-test('GET /auth/logout/callback clears authjs.* and logout_state', async ({
+test('GET /api/auth/logout/callback clears authjs.* and logout_state', async ({
   request,
   baseURL,
 }) => {
   const res = await request.get(
-    `${baseURL}/auth/logout/callback?state=teststate123`,
+    `${baseURL}/api/auth/logout/callback?state=teststate123`,
     {
       headers: {
         Cookie: [
@@ -51,5 +51,5 @@ test('GET /auth/logout/callback clears authjs.* and logout_state', async ({
   const logoutStateCookie = setCookies.find((sc) =>
     sc.startsWith('logout_state='),
   );
-  expect(logoutStateCookie).toMatch(/Path=\/auth\/logout\/callback/);
+  expect(logoutStateCookie).toMatch(/Path=\/api\/auth\/logout\/callback/);
 });

@@ -3,6 +3,7 @@ import { randomUUID } from 'crypto';
 import * as oidc from 'openid-client';
 import type { AuthConfig } from '@auth/core/types';
 import type { JWT } from '@auth/core/jwt';
+import { NuxtAuth } from '@zitadel/nuxt-auth/server';
 import { ZITADEL_SCOPES } from './scopes';
 
 const cfg = () => useRuntimeConfig();
@@ -304,3 +305,6 @@ export const authOptions: AuthConfig = {
     },
   },
 };
+
+// noinspection JSUnusedGlobalSymbols
+export const { handlers, getServerSession } = NuxtAuth(authOptions);

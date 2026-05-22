@@ -1,6 +1,5 @@
-import { getServerSession } from '#auth';
 import { setCookie } from 'h3';
-import { buildLogoutUrl } from '~~/server/auth';
+import { buildLogoutUrl, getServerSession } from '~~/server/auth';
 
 /**
  * Initiates the logout process by redirecting the user to the external Identity
