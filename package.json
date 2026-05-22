@@ -22,7 +22,7 @@
   "dependencies": {
     "@auth/core": "^0.40.0",
     "@nuxt/image": "^1.10.0",
-    "@zitadel/nuxt-auth": "^1.0.0",
+    "@zitadel/nuxt-auth": "file:../nuxt-auth",
     "h3": "^1.15.3",
     "nuxt": "^4.4.6",
     "openid-client": "^6.6.2",
