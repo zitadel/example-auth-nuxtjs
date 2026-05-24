@@ -176,14 +176,6 @@ export const authOptions: AuthConfig = {
           scope: ZITADEL_SCOPES,
         },
       },
-      profile(profile) {
-        return {
-          id: profile.sub,
-          name: profile.name || profile.preferred_username,
-          email: profile.email,
-          image: profile.picture || null,
-        };
-      },
     }),
   ],
 

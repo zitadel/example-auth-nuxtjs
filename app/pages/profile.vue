@@ -195,7 +195,7 @@
           </p>
           <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
             <pre class="text-sm text-green-400 font-mono leading-relaxed"
-              >{{ JSON.stringify(data, null, 2) }}
+              >{{ JSON.stringify(session, null, 2) }}
             </pre>
           </div>
         </div>
@@ -212,5 +212,5 @@ import { useAuth } from '#imports';
 
 definePageMeta({ middleware: 'auth' });
 
-const { data } = useAuth();
+const { data: session } = useAuth();
 </script>

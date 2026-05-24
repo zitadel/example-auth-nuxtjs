@@ -8,7 +8,7 @@
             alt="App Icon"
             width="40"
             height="40"
-            class="w-8 h-8"
+            class="h-8 w-8"
           />
           <h1 class="text-xl font-semibold text-gray-900">Demo Application</h1>
         </div>
