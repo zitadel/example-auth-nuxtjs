@@ -231,7 +231,7 @@ export const authOptions: AuthConfig = {
      * 3. **Automatic Refresh**: Calls refresh function when token expires
      *
      * ## When This Runs
-     * - Every time getServerSession() is called
+     * - Every time getSession() is called
      * - Every time useAuth() updates
      * - Before each authenticated API request
      *
@@ -273,7 +273,7 @@ export const authOptions: AuthConfig = {
      *
      * This callback transforms the internal JWT token into the session object
      * that your application code can access via useAuth() or
-     * getServerSession().
+     * getSession().
      *
      * ## Security Note
      *
@@ -299,4 +299,4 @@ export const authOptions: AuthConfig = {
 };
 
 // noinspection JSUnusedGlobalSymbols
-export const { handlers, getServerSession } = NuxtAuth(authOptions);
+export const { handlers, getSession } = NuxtAuth(authOptions);

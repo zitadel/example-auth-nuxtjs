@@ -1,5 +1,5 @@
 import { setCookie } from 'h3';
-import { buildLogoutUrl, getServerSession } from '~~/server/auth';
+import { buildLogoutUrl, getSession } from '~~/server/auth';
 
 /**
  * Initiates the logout process by redirecting the user to the external Identity
@@ -18,7 +18,7 @@ import { buildLogoutUrl, getServerSession } from '~~/server/auth';
  */
 export default defineEventHandler(async (event) => {
   const requestURL = getRequestURL(event);
-  const session = await getServerSession(event);
+  const session = await getSession(event);
 
   if (!session?.idToken) {
     throw createError({
