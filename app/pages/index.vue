@@ -1,14 +1,14 @@
 <template>
-  <div class="flex-1 flex flex-col">
+  <div class="flex flex-1 flex-col">
     <Header :is-authenticated="false" />
-    <main class="flex-1 flex items-center justify-center px-6 py-12">
-      <div class="max-w-6xl w-full">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <main class="flex flex-1 items-center justify-center px-6 py-12">
+      <div class="w-full max-w-6xl">
+        <div class="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <h1 class="text-4xl font-bold text-gray-900 mb-6">
+            <h1 class="mb-6 text-4xl font-bold text-gray-900">
               PKCE Authentication Demo
             </h1>
-            <p class="text-xl text-gray-600 mb-8">
+            <p class="mb-8 text-xl text-gray-600">
               This application demonstrates a PKCE authentication flow with
               Zitadel. Perfect for learning OAuth 2.0 security patterns and
               integrating with your own application.
@@ -17,11 +17,11 @@
             <div class="space-y-6">
               <div class="flex items-start space-x-4">
                 <div
-                  class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
                   <svg
-                    class="w-5 h-5 text-blue-600"
+                    class="h-5 w-5 text-blue-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -33,7 +33,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 class="mb-1 text-lg font-semibold text-gray-900">
                     Secure by Design
                   </h3>
                   <p class="text-gray-600">
@@ -45,11 +45,11 @@
 
               <div class="flex items-start space-x-4">
                 <div
-                  class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-green-100"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
                   <svg
-                    class="w-5 h-5 text-green-600"
+                    class="h-5 w-5 text-green-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -61,7 +61,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 class="mb-1 text-lg font-semibold text-gray-900">
                     Standards Compliant
                   </h3>
                   <p class="text-gray-600">
@@ -73,11 +73,11 @@
 
               <div class="flex items-start space-x-4">
                 <div
-                  class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
                   <svg
-                    class="w-5 h-5 text-purple-600"
+                    class="h-5 w-5 text-purple-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -89,7 +89,7 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 class="mb-1 text-lg font-semibold text-gray-900">
                     Developer Friendly
                   </h3>
                   <p class="text-gray-600">
@@ -103,27 +103,27 @@
 
           <div class="flex justify-center">
             <div class="w-full max-w-md">
-              <div class="bg-white rounded-lg border border-gray-200 p-8">
-                <div class="text-center mb-8">
+              <div class="rounded-lg border border-gray-200 bg-white p-8">
+                <div class="mb-8 text-center">
                   <div
-                    class="w-80 h-32 bg-white rounded-lg flex items-center justify-center mx-auto mb-6"
+                    class="mx-auto mb-6 flex h-32 w-80 items-center justify-center rounded-lg bg-white"
                   >
                     <NuxtImg
                       src="/openid-logo.svg"
                       alt="OpenID"
                       width="288"
                       height="112"
-                      class="w-72 h-28"
+                      class="h-28 w-72"
                     />
                   </div>
                 </div>
                 <button
-                  class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center space-x-2 mb-6 cursor-pointer"
+                  class="mb-6 flex w-full cursor-pointer items-center justify-center space-x-2 rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition duration-200 hover:bg-blue-700"
                   @click="() => signIn('zitadel', { callbackUrl: '/profile' })"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
                   <svg
-                    class="w-5 h-5 text-white"
+                    class="h-5 w-5 text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -141,13 +141,13 @@
                 </button>
 
                 <div class="text-center">
-                  <p class="text-sm text-gray-500 mb-4">
+                  <p class="mb-4 text-sm text-gray-500">
                     What happens when you click the button:
                   </p>
-                  <div class="text-left space-y-2">
+                  <div class="space-y-2 text-left">
                     <div class="flex items-center text-xs text-gray-600">
                       <span
-                        class="w-4 h-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold mr-2"
+                        class="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-600"
                       >
                         1
                       </span>
@@ -155,7 +155,7 @@
                     </div>
                     <div class="flex items-center text-xs text-gray-600">
                       <span
-                        class="w-4 h-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold mr-2"
+                        class="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-600"
                       >
                         2
                       </span>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="flex items-center text-xs text-gray-600">
                       <span
-                        class="w-4 h-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold mr-2"
+                        class="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-600"
                       >
                         3
                       </span>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="flex items-center text-xs text-gray-600">
                       <span
-                        class="w-4 h-4 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold mr-2"
+                        class="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-green-100 text-xs font-semibold text-green-600"
                       >
                         ✓
                       </span>

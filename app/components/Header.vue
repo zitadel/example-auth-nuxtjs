@@ -1,6 +1,6 @@
 <template>
-  <header class="bg-white border-b border-gray-200" is-authenticated>
-    <div class="max-w-7xl mx-auto px-6 py-4">
+  <header class="border-b border-gray-200 bg-white" is-authenticated>
+    <div class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <NuxtImg
