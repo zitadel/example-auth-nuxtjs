@@ -19,7 +19,7 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@auth/core": "^0.41.0",
+    "@auth/core": "^0.40.0",
     "@nuxt/image": "^1.10.0",
     "@zitadel/nuxt-auth": "^2.0.0",
     "h3": "^1.15.3",

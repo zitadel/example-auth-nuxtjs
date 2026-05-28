@@ -111,7 +111,7 @@ const providers = ref<ProvidersRecord | null>(null);
 const csrfToken = ref('');
 
 const provider = computed(() => providers.value?.zitadel);
-const callbackUrl = computed(() => route.query.callbackUrl || '/profile');
+const callbackUrl = computed(() => route.query.callbackUrl ?? '/profile');
 
 onMounted(async () => {
   const [providersData, tokenData] = await Promise.all([
