@@ -1,6 +1,6 @@
 <template>
-  <header class="bg-white border-b border-gray-200" is-authenticated>
-    <div class="max-w-7xl mx-auto px-6 py-4">
+  <header class="border-b border-gray-200 bg-white" is-authenticated>
+    <div class="mx-auto max-w-7xl px-6 py-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-3">
           <NuxtImg
@@ -8,7 +8,7 @@
             alt="App Icon"
             width="40"
             height="40"
-            class="w-8 h-8"
+            class="h-8 w-8"
           />
           <h1 class="text-xl font-semibold text-gray-900">Demo Application</h1>
         </div>

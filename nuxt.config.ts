@@ -13,6 +13,20 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  // Send the same baseline security headers the other 7 examples set in
+  // their respective dev configs. Production hardening still belongs at
+  // the reverse proxy.
+  routeRules: {
+    '/**': {
+      headers: {
+        'X-Frame-Options': 'DENY',
+        'X-Content-Type-Options': 'nosniff',
+        'Content-Security-Policy':
+          "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline';",
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+      },
+    },
+  },
   app: {
     head: {
       title: 'Zitadel PKCE Demo',

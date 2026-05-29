@@ -1,24 +1,18 @@
 <template>
-  <div class="bg-gray-50 min-h-screen flex flex-col">
+  <div class="flex min-h-screen flex-col bg-gray-50">
     <Header :is-authenticated="true" />
     <main class="flex-1 px-6 py-12">
-      <div
-        v-if="status === 'loading'"
-        class="flex items-center justify-center min-h-screen"
-      >
-        <p>Loading your session…</p>
-      </div>
-      <div v-else class="max-w-5xl mx-auto">
+      <div class="mx-auto max-w-5xl">
         <div
-          class="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-6 mb-8"
+          class="mb-8 rounded-lg border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 p-6"
         >
           <div class="flex items-center">
             <div
-              class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center"
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500"
             >
               <!--suppress HtmlDeprecatedAttribute -->
               <svg
-                class="w-6 h-6 text-white"
+                class="h-6 w-6 text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -33,40 +27,40 @@
               <h2 class="text-xl font-semibold text-green-900">
                 Authentication Successful!
               </h2>
-              <p class="text-green-700 mt-1">
+              <p class="mt-1 text-green-700">
                 You have successfully completed the PKCE authentication flow.
               </p>
             </div>
           </div>
         </div>
 
-        <div class="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-          <h1 class="text-3xl font-bold text-gray-900 mb-6">
+        <div class="mb-8 rounded-lg border border-gray-200 bg-white p-8">
+          <h1 class="mb-6 text-3xl font-bold text-gray-900">
             🔐 OAuth 2.0 PKCE Flow Completed
           </h1>
-          <p class="text-lg text-gray-700 mb-8">
+          <p class="mb-8 text-lg text-gray-700">
             Congratulations! You have successfully completed the OAuth 2.0 PKCE
             (Proof Key for Code Exchange) authentication flow. This demonstrates
             how modern applications securely authenticate users with Zitadel.
           </p>
-          <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="mb-8 grid gap-8 md:grid-cols-2">
             <div>
-              <h2 class="text-xl font-semibold text-gray-900 mb-4">
+              <h2 class="mb-4 text-xl font-semibold text-gray-900">
                 What is PKCE?
               </h2>
-              <p class="text-gray-700 mb-4">
+              <p class="mb-4 text-gray-700">
                 PKCE is a security extension to OAuth 2.0 that protects against
                 authorization code interception attacks. It's especially
                 important for public clients like single-page applications and
                 mobile apps.
               </p>
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">
+              <h3 class="mb-3 text-lg font-semibold text-gray-900">
                 Key Benefits:
               </h3>
               <ul class="space-y-2 text-gray-700">
                 <li class="flex items-center">
                   <svg
-                    class="w-4 h-4 text-green-500 mr-2"
+                    class="mr-2 h-4 w-4 text-green-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -80,7 +74,7 @@
                 </li>
                 <li class="flex items-center">
                   <svg
-                    class="w-4 h-4 text-green-500 mr-2"
+                    class="mr-2 h-4 w-4 text-green-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -94,7 +88,7 @@
                 </li>
                 <li class="flex items-center">
                   <svg
-                    class="w-4 h-4 text-green-500 mr-2"
+                    class="mr-2 h-4 w-4 text-green-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -109,13 +103,13 @@
               </ul>
             </div>
             <div>
-              <h2 class="text-xl font-semibold text-gray-900 mb-4">
+              <h2 class="mb-4 text-xl font-semibold text-gray-900">
                 Flow Steps Completed
               </h2>
               <div class="space-y-4">
                 <div class="flex items-center">
                   <div
-                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-semibold text-white"
                   >
                     ✓
                   </div>
@@ -130,7 +124,7 @@
                 </div>
                 <div class="flex items-center">
                   <div
-                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-semibold text-white"
                   >
                     ✓
                   </div>
@@ -145,7 +139,7 @@
                 </div>
                 <div class="flex items-center">
                   <div
-                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-semibold text-white"
                   >
                     ✓
                   </div>
@@ -160,7 +154,7 @@
                 </div>
                 <div class="flex items-center">
                   <div
-                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-semibold text-white"
                   >
                     ✓
                   </div>
@@ -175,7 +169,7 @@
                 </div>
                 <div class="flex items-center">
                   <div
-                    class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-semibold mr-3"
+                    class="mr-3 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-semibold text-white"
                   >
                     ✓
                   </div>
@@ -191,17 +185,17 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-lg border border-gray-200 p-8">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+        <div class="rounded-lg border border-gray-200 bg-white p-8">
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900">
             Session Information
           </h2>
-          <p class="text-gray-600 mb-6">
+          <p class="mb-6 text-gray-600">
             Below is the authentication data stored in your session after a
             successful PKCE flow:
           </p>
-          <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
-            <pre class="text-sm text-green-400 font-mono leading-relaxed"
-              >{{ JSON.stringify(data, null, 2) }}
+          <div class="overflow-x-auto rounded-lg bg-gray-900 p-6">
+            <pre class="font-mono text-sm leading-relaxed text-green-400"
+              >{{ JSON.stringify(session, null, 2) }}
             </pre>
           </div>
         </div>
@@ -216,11 +210,7 @@ import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
 import { useAuth } from '#imports';
 
-const { data, status, signIn } = useAuth();
+definePageMeta({ middleware: 'auth' });
 
-watchEffect(() => {
-  if (status.value === 'unauthenticated') {
-    signIn('zitadel', { callbackUrl: '/profile' });
-  }
-});
+const { data: session } = useAuth();
 </script>

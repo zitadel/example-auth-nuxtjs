@@ -3,6 +3,7 @@ import { randomUUID } from 'crypto';
 import * as oidc from 'openid-client';
 import type { AuthConfig } from '@auth/core/types';
 import type { JWT } from '@auth/core/jwt';
+import { NuxtAuth } from '@zitadel/nuxt-auth/server';
 import { ZITADEL_SCOPES } from './scopes';
 
 const cfg = () => useRuntimeConfig();
@@ -175,14 +176,6 @@ export const authOptions: AuthConfig = {
           scope: ZITADEL_SCOPES,
         },
       },
-      profile(profile) {
-        return {
-          id: profile.sub,
-          name: profile.name || profile.preferred_username,
-          email: profile.email,
-          image: profile.picture || null,
-        };
-      },
     }),
   ],
 
@@ -206,7 +199,7 @@ export const authOptions: AuthConfig = {
    * (sign-in and error) since we use external OAuth authentication.
    */
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/auth/login',
     error: '/auth/error',
   },
 
@@ -238,7 +231,7 @@ export const authOptions: AuthConfig = {
      * 3. **Automatic Refresh**: Calls refresh function when token expires
      *
      * ## When This Runs
-     * - Every time getServerSession() is called
+     * - Every time getSession() is called
      * - Every time useAuth() updates
      * - Before each authenticated API request
      *
@@ -280,7 +273,7 @@ export const authOptions: AuthConfig = {
      *
      * This callback transforms the internal JWT token into the session object
      * that your application code can access via useAuth() or
-     * getServerSession().
+     * getSession().
      *
      * ## Security Note
      *
@@ -304,3 +297,6 @@ export const authOptions: AuthConfig = {
     },
   },
 };
+
+// noinspection JSUnusedGlobalSymbols
+export const { handlers, getSession } = NuxtAuth(authOptions);

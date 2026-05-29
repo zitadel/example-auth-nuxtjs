@@ -1,5 +1,5 @@
 <template>
-  <ErrorBoundary :show-details="isDev" class="flex-1 flex flex-col">
+  <ErrorBoundary :show-details="isDev" class="flex flex-1 flex-col">
     <slot />
   </ErrorBoundary>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <main
-    class="flex-1 grid place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
+    class="grid flex-1 place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
   >
     <div class="text-center">
       <div
-        class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 mb-6"
+        class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100"
       >
         <!--suppress HtmlDeprecatedAttribute -->
         <svg

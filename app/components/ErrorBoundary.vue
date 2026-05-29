@@ -1,13 +1,13 @@
 <template>
-  <div v-if="hasError" class="flex-1 flex flex-col">
+  <div v-if="hasError" class="flex flex-1 flex-col">
     <slot v-if="$slots.fallback" name="fallback" />
     <main
       v-else
-      class="flex-1 grid place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
+      class="grid flex-1 place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
     >
       <div class="text-center">
         <div
-          class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100 mb-6"
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-red-100"
         >
           <!--suppress HtmlDeprecatedAttribute -->
           <svg
@@ -53,7 +53,7 @@
       </div>
     </main>
   </div>
-  <div v-else class="flex-1 flex flex-col">
+  <div v-else class="flex flex-1 flex-col">
     <slot />
   </div>
 </template>
