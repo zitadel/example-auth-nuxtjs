@@ -19,31 +19,31 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "@auth/core": "^0.40.0",
-    "@nuxt/image": "^1.10.0",
+    "@auth/core": "^0.41.2",
+    "@nuxt/image": "^2.0.0",
     "@zitadel/nuxt-auth": "^2.0.0",
     "h3": "^1.15.3",
-    "nuxt": "^4.4.6",
+    "nuxt": "^4.4.8",
     "openid-client": "^6.6.3",
-    "vue": "^3.5.17",
-    "vue-router": "^4.5.1"
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^20.5.0",
-    "@nuxt/eslint": "^1.7.1",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@nuxt/eslint": "^1.16.0",
     "@playwright/test": "^1.56.1",
-    "@tailwindcss/vite": "^4.3.0",
-    "@types/node": "^22",
-    "eslint": "^9.39.1",
+    "@tailwindcss/vite": "^4.3.1",
+    "@types/node": "^25",
+    "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
-    "knip": "^5.64.1",
-    "prettier": "^3.6.2",
+    "knip": "^6.16.1",
+    "prettier": "^3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "~5.9.2",
-    "@eslint/js": "^9.38.0",
-    "globals": "^16.3.0",
-    "typescript-eslint": "^8.60.0"
+    "typescript": "~6.0.3",
+    "@eslint/js": "^10.0.1",
+    "globals": "^17.6.0",
+    "typescript-eslint": "^8.61.0"
   },
   "engines": {
     "node": ">=22.0.0"
