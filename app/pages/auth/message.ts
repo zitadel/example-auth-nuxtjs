@@ -22,11 +22,7 @@ type ErrorCategory = 'signin-error' | 'auth-error';
  */
 export function getMessage(
   errorInput:
-    | string
-    | null
-    | LocationQueryValue
-    | LocationQueryValue[]
-    | undefined,
+    string | null | LocationQueryValue | LocationQueryValue[] | undefined,
   category: ErrorCategory,
 ): { heading: string; message: string } {
   const errorCode = Array.isArray(errorInput)
